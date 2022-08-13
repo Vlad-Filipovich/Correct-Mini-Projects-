@@ -14,17 +14,23 @@ print("Now you can ask me anything!!!")
 
 
 def magic_ball_8():
-    while True:
+    flag = True
+    while True and flag:
         print("What do you want to know about?", sep='\n')
         question = input()
         print('\n', choice(answers), '\n', sep='---')
-        print("Is there anything else you want to ask?")
-        Y_N = input()
-        if Y_N.lower() == 'yes':
-            continue
-        if Y_N.lower() == 'no':
-            print("Come back if you have any questions!")
-            break
+        while flag:
+            print("Is there anything else you want to ask?")
+            Y_N = input()
+            if Y_N.lower() == 'yes':
+                magic_ball_8()
+                continue
+            if Y_N.lower() == 'no':
+                print("Come back if you have any questions!")
+                flag = False
+            else:
+                print("I don't understand! Answer again, please.")
+                continue
 
 
 magic_ball_8()
