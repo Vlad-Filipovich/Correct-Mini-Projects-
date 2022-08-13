@@ -7,19 +7,21 @@ answers = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", 
            "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.", "Without a doubt.", "Yes.",
            "Yes – definitely.", "You may rely on it."]
 print("Hello world, I'm Magic Ball 8 and I know all the answers", '\n')
-
+print("What's your name?")
+name = input()
+print("Nice to meet you,", name)
+print("Now you can ask me anything!!!")
 
 def magic_ball_8():
     while True:
-        print("What's your name?")
-        name = input()
-        print("Nice to meet you", name)
-        print("Now you can ask me anything!!!", "What do you want to know about?", sep='\n')
+        print("What do you want to know about?", sep='\n')
         question = input()
-        print(choice(answers))
+        print('\n', choice(answers), '\n', sep='---')
         print("Is there anything else you want to ask?")
         Y_N = input()
         if Y_N.lower() == 'yes':
             continue
-        else:
+        if Y_N.lower() == 'no':
+            print("Come back if you have any questions!")
             break
+magic_ball_8()
