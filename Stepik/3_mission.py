@@ -1,6 +1,10 @@
 # Secure Password Generator
 from random import *
 
+print('\n', 'Welcome to the "Secure Password Generator bot."', sep='')
+print('Here you can generate the password you need.', '\n')
+print("Let's start")
+print('\n', 'Please only answer "Yes" or "No" to the questions.', '\n', sep='')
 digits = '0123456789'
 lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
 uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
