@@ -16,22 +16,16 @@ password = []
 
 def generate_password():
     chars = []
-    while True:
-        print("Enter the number of passwords to generate:")
+    print("Enter the number of passwords to generate:")
+    amount_pass = input()
+    while not amount_pass.isdigit():
+        print('Please enter a number.')
         amount_pass = input()
-        if not amount_pass.isdigit():
-            print('Please enter a number.')
-            continue
-        else:
-            break
-    while True:
-        print("Enter the length of one password:")
+    print("Enter the length of one password:")
+    len_pass = input()
+    while not len_pass.isdigit():
+        print('Please enter a number.')
         len_pass = input()
-        if not amount_pass.isdigit():
-            print('Please enter a number.')
-            continue
-        else:
-            break
     quest_1 = "Should numbers be included?"
     quest_2 = "Should capital letters be included?"
     quest_3 = "Should lowercase letters be included?"
