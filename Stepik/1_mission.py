@@ -12,7 +12,7 @@ def game():
     global right_border
     while True:
         right_border = input()
-        if not int(right_border.isdigit()):
+        if not right_border.isdigit():
             print('Что-то не так! Скорее всего Вы указали не натуральное число, попробуйте ещё раз!')
             continue
         else:
@@ -44,7 +44,8 @@ def repeat_game():
         print('Сыграем ещё разок?', 'Ответьте "ДА" или "НЕТ"', sep='\n')
         answer = input()
         if answer.upper() == 'ДА':
-            is_game()
+            game()
+            continue
         if answer.upper() == 'НЕТ':
             break
         else:
