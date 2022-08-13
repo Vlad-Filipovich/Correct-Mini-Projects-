@@ -1,5 +1,5 @@
 # Magic Ball 8
-from random import *
+from random import choice
 
 answers = ["As I see it, yes.", "Ask again later.", "Better not tell you now.", "Cannot predict now.",
            "Concentrate and ask again.", "Don’t count on it.", "It is certain.", "It is decidedly so.", "Most likely.",
