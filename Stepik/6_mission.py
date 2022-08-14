@@ -101,7 +101,7 @@ def play(word):
                 if ''.join(word_completion) == word:
                     print('С победой даун!')
                     break
-            if letter in guessed_letters:
+            elif letter in guessed_letters:
                 print('Было, было!')
             else:
                 tries -= 1
