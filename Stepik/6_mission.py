@@ -79,7 +79,7 @@ def display_hangman(tries):
     ]
     return stages[tries]
 def play(word):
-    word_completion = '_' * len(word)  # строка, содержащая символы _ на каждую букву задуманного слова
+    word_completion = ['_'] * len(word)  # строка, содержащая символы _ на каждую букву задуманного слова
     guessed = False  # сигнальная метка
     guessed_letters = []  # список уже названных букв
     guessed_words = []  # список уже названных слов
@@ -87,11 +87,36 @@ def play(word):
     print('Давайте играть в угадайку слов!')
     tries = 6
     print(display_hangman(tries))
-    print(word_completion)
-    while not guessed:
-        print('Введите букву:')
-        letters = input()
-        if letters in word:
-            guessed_letters.append(letters)
-            print('Вы угадали!')
-            print(word_completion)
+    print(''.join(word_completion))
+    while True:
+        print('Введите букву или слово:')
+        letter = input().upper()
+        if len(letter) == 1:
+            if letter in word and letter not in guessed_letters:
+                for i in range(len(word)):
+                    if word[i] == letter:
+                        word_completion[i] = letter
+                print('Нихуя себе! Как? Буква есть в слове!')
+                print(''.join(word_completion))
+                if ''.join(word_completion) == word:
+                    print('С победой даун!')
+                    break
+            if letter in guessed_letters:
+                print('Было, было!')
+            else:
+                tries -= 1
+                print(display_hangman(tries))
+                print(''.join(word_completion))
+                print('Такой буквы нет, ха-ха-ха ВИСЕЛИЦА!!!')
+            guessed_letters.append(letter)
+        else:
+            guessed_words.append(letter)
+            if letter == word:
+                print('Ты чё ебанутый(ая)! Поздравляю!')
+                break
+            else:
+                tries -= 1
+                print(display_hangman(tries))
+                print(''.join(word_completion))
+                print('А вот и хуй! ахахаха')
+play(get_word())
