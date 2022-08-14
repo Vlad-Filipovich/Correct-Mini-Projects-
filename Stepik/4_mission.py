@@ -3,11 +3,11 @@ eng_lower_alphabet = 'abcdefghijklmnopqrstuvwxyz'
 eng_upper_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 rus_lower_alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя"
 rus_upper_alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-print('Enter Process Variant (encrypt = "e" or decipher = "d":')
+print('Enter Process Variant (encrypt = "e" or decipher = "d":)')
 var = input()
 while not var == 'e' and not var == 'd':
     print('Something is wrong, you did not meet the input conditions. Try again:')
-    print('Enter Process Variant (encrypt = "e" or decipher = "d":')
+    print('Enter Process Variant (encrypt = "e" or decipher = "d":)')
     var = input()
 print('Enter language ("rus" or "eng"):')
 lang = input()
